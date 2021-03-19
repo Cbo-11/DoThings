@@ -6,7 +6,6 @@ task = (title, description, dueDate,priority, project) => {
     this.dueDate = dueDate
     this.priority = priority  
     this.complete = false
-    this.project = project
 }
 
 var updateTask = (task) => {
@@ -16,7 +15,5 @@ var updateTask = (task) => {
     this.priority =  d
     this.complete = e
 }
-
-
 
 export default {task, updateTask}
