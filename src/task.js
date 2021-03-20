@@ -1,19 +1,22 @@
-//create factory function for task creation, update
-
-task = (title, description, dueDate,priority, project) => {
+export default class Task {
+    constructor (title, description, dueDate,priority, project) {
+    this.complete = false
     this.title =  title 
     this.description = description
     this.dueDate = dueDate
-    this.priority = priority  
-    this.complete = false
-}
+    this.priority = priority
+    }
 
-var updateTask = (task) => {
-    this.title =  a
-    this.description = b
-    this.dueDate = c
-    this.priority =  d
-    this.complete = e
-}
+    getTask() { 
+        return this.name;
+    }
 
-export default {task, updateTask}
+    updateTask(task)  {
+        this.complete = e;
+        this.title =  a;
+        this.description = b;
+        this.dueDate = c;
+        this.priority =  d;
+    }
+
+}
