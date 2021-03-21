@@ -18,7 +18,7 @@ export default class ProjectList {
         return this.projects.find((project) => project.getProjectName() === projectName);
     }
 
-    addToProjects(project) {
+    addToProjectList(project) {
         //if (this.projects.indexOf(project) > 0) return;
         this.projects.push(project);
     }
@@ -29,4 +29,4 @@ export default class ProjectList {
         ) ; 
         this.projects.splice(this.projects.indexOf(projectDel),1);
     }
-} //end of ProjectList
+} 

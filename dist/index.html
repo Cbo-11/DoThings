@@ -63,7 +63,9 @@
                 <label for="description">Description</label>
             </div>
             <div class="form-floating  col-2">
-                <input type="text" id="project" class="form-control">
+              <select class="project-select mdb-select md-form form-control" id="projectSelect">
+                <option id='placeholder' value="" disabled selected>Choose Project</option>
+              </select>
                 <label for="project">Project</label>
             </div>
             <div class="form-floating  col-auto">
@@ -79,7 +81,7 @@
                 <label for="priority">Priority</label>
           </div>
           <div class="form-floating  col-auto">
-            <a class="btn btn-primary btn-block p-3" href="#">ADD</a>
+            <a id='addTaskBtn' class="btn btn-primary btn-block p-3" href="#">ADD</a>
         </div>
         </div>
       </form>
