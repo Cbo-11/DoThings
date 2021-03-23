@@ -1,5 +1,5 @@
 export default class Task {
-    constructor (title, description, dueDate,priority, project) {
+    constructor (title, description, dueDate,priority) {
     this.complete = false
     this.title =  title 
     this.description = description
@@ -8,7 +8,7 @@ export default class Task {
     }
 
     getTask() { 
-        return this.name;
+        return this.title;
     }
 
     updateTask(task)  {

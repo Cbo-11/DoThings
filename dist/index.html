@@ -49,7 +49,7 @@
                 
       <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <div class="flex-column col-md-9 mt-5 justify-content-center">
-      <form>
+      <form id="taskForm">
         <div class="row g-3 justify-content-center">
             <div class="col-auto p-3"">
                 <div class="form"><h2 class="align-text-bottom">Do This:</h2></div>
@@ -63,8 +63,8 @@
                 <label for="description">Description</label>
             </div>
             <div class="form-floating  col-2">
-              <select class="project-select mdb-select md-form form-control" id="projectSelect">
-                <option id='placeholder' value="" disabled selected>Choose Project</option>
+              <select class="form-control" id="projectSelect">
+                <option id='placeholder' value="" disabled>Choose Project</option>
               </select>
                 <label for="project">Project</label>
             </div>
@@ -81,7 +81,7 @@
                 <label for="priority">Priority</label>
           </div>
           <div class="form-floating  col-auto">
-            <a id='addTaskBtn' class="btn btn-primary btn-block p-3" href="#">ADD</a>
+            <input name='addTaskBtn' type="submit" class="btn btn-primary btn-block p-3" value="Add">
         </div>
         </div>
       </form>
@@ -93,7 +93,6 @@
                  <th scope="col" class="col-1">Complete</th>
                   <th scope="col" class="col-2">Name</th>
                   <th scope="col" class="col-3">Description</th>
-                  <th scope="col" class="col-2">Project</th>
                   <th scope="col" class="col-1">DueDate</th>
                   <th scope="col" class="col-1">Priority</th>
                 </tr>

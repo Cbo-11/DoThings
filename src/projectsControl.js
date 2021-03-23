@@ -15,11 +15,11 @@ export default class ProjectList {
     }
 
     getProject(projectName) { 
-        return this.projects.find((project) => project.getProjectName() === projectName);
+        return this.projects.find((pr) => pr.getProjectName() === projectName);
     }
 
     addToProjectList(project) {
-        //if (this.projects.indexOf(project) > 0) return;
+        if (this.projects.indexOf(project) > 0) return;
         this.projects.push(project);
     }
 

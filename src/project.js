@@ -1,5 +1,5 @@
 import Task from './task'
-export default class  Project {
+export default class Project {
 
     constructor(name) {
     this.title =  name;
@@ -7,11 +7,11 @@ export default class  Project {
     }
 
     setProjectName(name) {
-        this.name = name;
+        this.title = name;
     }
 
     getProjectName(){
-        return this.name;
+        return this.title;
     }
 
     setTasks(tasks) {
