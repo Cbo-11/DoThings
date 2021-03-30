@@ -1,29 +1,31 @@
-import Task from './task';
-import ProjectList from './projectsControl';
-import Project from './project';
+import Task from "./task";
+import ProjectList from "./projectsControl";
+import Project from "./project";
 
 export default class Storage {
   static saveList(list) {
-    localStorage.setItem('loadedProjects', JSON.stringify(list));
+    localStorage.setItem("loadedProjects", JSON.stringify(list));
   }
 
   static getToDo() {
     const loadedProjects = Object.assign(
       new ProjectList(),
-      JSON.parse(localStorage.getItem('loadedProjects')),
+      JSON.parse(localStorage.getItem("loadedProjects"))
     );
 
     loadedProjects.setProjects(
       loadedProjects
         .getProjects()
-        .map((project) => Object.assign(new Project(), project)),
+        .map((project) => Object.assign(new Project(), project))
     );
 
     loadedProjects
       .getProjects()
-      .forEach((project) => project.setTasks(
-        project.getTasks().map((task) => Object.assign(new Task(), task)),
-      ));
+      .forEach((project) =>
+        project.setTasks(
+          project.getTasks().map((task) => Object.assign(new Task(), task))
+        )
+      );
     return loadedProjects;
   }
 
@@ -53,8 +55,16 @@ export default class Storage {
 
   static updateTask(projectName, taskId, task) {
     const projectList = Storage.getToDo();
-    projectList.getProject(projectName).getTask(taskId)
-    .updateTask(task.title, task.description, task.dueDate, task.complete, task.priority);
+    projectList
+      .getProject(projectName)
+      .getTask(taskId)
+      .updateTask(
+        task.title,
+        task.description,
+        task.dueDate,
+        task.complete,
+        task.priority
+      );
     Storage.saveList(projectList);
   }
 

@@ -1,11 +1,11 @@
-import Project from './project';
-import Task from './task';
+import Project from "./project";
+import Task from "./task";
 
 export default class ProjectList {
   constructor() {
     this.projects = [];
-    this.projects.push(new Project('Today'));
-    this.projects.push(new Project('This Week'));
+    this.projects.push(new Project("Today"));
+    this.projects.push(new Project("This Week"));
   }
 
   setProjects(projects) {
@@ -27,31 +27,43 @@ export default class ProjectList {
 
   deleteProject(projectName) {
     const projectDel = this.projects.find(
-      (project) => project.getProjectName() === projectName,
+      (project) => project.getProjectName() === projectName
     );
     this.projects.splice(this.projects.indexOf(projectDel), 1);
   }
 
   updateWeekTasks() {
-    this.getProject('This Week').tasks = [];
+    this.getProject("This Week").tasks = [];
 
     this.projects.forEach((project) => {
-      if (project.getProjectName() === 'Today' || project.getProjectName() === 'This Week') return;
+      if (
+        project.getProjectName() === "Today" ||
+        project.getProjectName() === "This Week"
+      )
+        return;
       const thisWeekTasks = project.getWeeksTasks();
       thisWeekTasks.forEach((task) => {
-        this.getProject('This Week').addTask(new Task(task.title, task.description, task.dueDate, task.priority));
+        this.getProject("This Week").addTask(
+          new Task(task.title, task.description, task.dueDate, task.priority)
+        );
       });
     });
   }
 
   updateTodayTasks() {
-    this.getProject('Today').tasks = [];
+    this.getProject("Today").tasks = [];
 
     this.projects.forEach((project) => {
-      if (project.getProjectName() === 'Today' || project.getProjectName() === 'This Week') return;
+      if (
+        project.getProjectName() === "Today" ||
+        project.getProjectName() === "This Week"
+      )
+        return;
       const thisWeekTasks = project.getTodaysTasks();
       thisWeekTasks.forEach((task) => {
-        this.getProject('Today').addTask(new Task(task.title, task.description, task.dueDate, task.priority));
+        this.getProject("Today").addTask(
+          new Task(task.title, task.description, task.dueDate, task.priority)
+        );
       });
     });
   }
